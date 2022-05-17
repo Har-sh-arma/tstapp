@@ -6,8 +6,11 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <netinet/in.h>
 
-int main(){
+int main(int argc, char* argv[]){
+	
+	printf("%d",SOCK_STREAM);
 
 	pid_t pid  = fork();
 	if(pid<0){
@@ -15,7 +18,7 @@ int main(){
 		exit(1);
 		
 	}
-	else{
+	else if(pid == 0){
 		execv("./server",NULL);	
 	}
 	wait(NULL);
