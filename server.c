@@ -4,7 +4,7 @@
 
 int main(){
 	
-	printf("This is server code.");
+	printf("This is server code.\n");
 	return 0;
 
 }
